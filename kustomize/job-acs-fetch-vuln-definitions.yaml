@@ -11,8 +11,7 @@ spec:
     spec:
       containers:
       - name: acs-fetch-vuln-definitions
-        # image: registry.redhat.io/openshift4/ose-cli:v4.14
-        image: registry.redhat.io/advanced-cluster-security/rhacs-roxctl-rhel8:4.3.4
+        image: quay.io/alopezme/rhacs-roxctl-oc:4.3.4
         imagePullPolicy: Always
         command:
         - /opt/script.sh
