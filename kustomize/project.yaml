@@ -1,0 +1,9 @@
+---
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/description: This project contains all the resources related to
+      the ACS operator
+    openshift.io/display-name: ACS Operator
+  name: rhacs-operator
