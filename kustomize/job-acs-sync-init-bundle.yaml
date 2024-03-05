@@ -24,7 +24,7 @@ spec:
         - name: ROX_CENTRAL_ADDRESS
           value: "https://central.stackrox.svc:443"
         - name: ACS_SECURED_CLUSTER
-          value: "local-cluster"
+          value: "hub-cluster"
         volumeMounts: 
         - name: scripts
           mountPath: /opt
