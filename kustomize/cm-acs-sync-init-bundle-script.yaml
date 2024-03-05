@@ -16,7 +16,8 @@ data:
     echo "[2/3] Retrieving the Init Bundle..."
     roxctl --insecure-skip-tls-verify \
       -e $ROX_CENTRAL_ADDRESS -p $ACS_ADMIN_PASSWORD \
-      central init-bundles generate $ACS_SECURED_CLUSTER
+      central init-bundles generate $ACS_SECURED_CLUSTER \
+      --output-secrets cluster_init_bundle.yaml
     echo ""
 
     echo "[3/3] Applying the init Bundle secrets to the local cluster..."
