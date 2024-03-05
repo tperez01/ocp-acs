@@ -35,5 +35,5 @@ spec:
           defaultMode: 0555
       dnsPolicy: ClusterFirst
       restartPolicy: OnFailure
-      serviceAccountName: default
+      serviceAccountName: acs-sync-init-bundle
       terminationGracePeriodSeconds: 30

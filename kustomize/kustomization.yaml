@@ -8,6 +8,7 @@ resources:
   - ns-stackrox.yaml
   - central-stackrox-central-services.yaml
   # - consolelink-central.yaml
+  - crb-acs-sync-init-bundle-edit.yaml
   - cm-acs-fetch-vuln-definitions-script.yaml
   - cm-acs-sync-init-bundle-script.yaml
   - job-acs-fetch-vuln-definitions.yaml
