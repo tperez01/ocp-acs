@@ -6,4 +6,5 @@ metadata:
     openshift.io/description: This project contains all the resources related to
       the ACS operator
     openshift.io/display-name: ACS Operator
+    argocd.argoproj.io/sync-wave: "00"
   name: rhacs-operator

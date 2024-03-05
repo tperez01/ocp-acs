@@ -4,6 +4,8 @@ kind: Subscription
 metadata:
   name: rhacs-operator
   namespace: rhacs-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "02"
 spec:
   channel: stable
   installPlanApproval: Automatic
