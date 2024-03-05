@@ -52,6 +52,7 @@ This repo provides a custom container image based on the `ose-cli` image plus th
 podman build -t quay.io/alopezme/rhacs-roxctl-oc:4.3.4 .
 
 # Push it to the container registry
+podman push quay.io/alopezme/rhacs-roxctl-oc:4.3.4
 ----
 
 == Installation

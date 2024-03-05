@@ -9,8 +9,8 @@ resources:
   - central-stackrox-central-services.yaml
   # - consolelink-central.yaml
   - cm-acs-fetch-vuln-definitions-script.yaml
-  # - cm-acs-sync-init-bundle-script.yaml
+  - cm-acs-sync-init-bundle-script.yaml
   - job-acs-fetch-vuln-definitions.yaml
-  # - job-acs-sync-init-bundle.yaml
+  - job-acs-sync-init-bundle.yaml
   # - securedcluster-local.yaml
 ...
