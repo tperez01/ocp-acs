@@ -1,0 +1,38 @@
+---
+kind: SecuredCluster
+apiVersion: platform.stackrox.io/v1alpha1
+metadata:
+  name: stackrox-secured-cluster-${SECURED_CLUSTER_NAME}
+  namespace: ${ACS_NAMESPACE}
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  centralEndpoint: ${CENTRAL_ENDPOINT}
+  clusterName: ${SECURED_CLUSTER_NAME}
+  monitoring:
+    openshift:
+      enabled: true
+  auditLogs:
+    collection: Auto
+  admissionControl:
+    listenOnUpdates: true
+    bypass: BreakGlassAnnotation
+    contactImageScanners: DoNotScanInline
+    listenOnCreates: true
+    replicas: 3
+    timeoutSeconds: 20
+    listenOnEvents: true
+  scanner:
+    analyzer:
+      scaling:
+        autoScaling: Enabled
+        maxReplicas: 5
+        minReplicas: 1
+        replicas: 1
+    scannerComponent: AutoSense
+  perNode:
+    collector:
+      collection: CORE_BPF
+      imageFlavor: Regular
+    taintToleration: TolerateTaints
