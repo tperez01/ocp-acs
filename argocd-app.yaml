@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: kustomize
+    path: openshift
     repoURL: https://github.com/alvarolop/ocp-acs
     targetRevision: main
   syncPolicy:
