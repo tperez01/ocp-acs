@@ -2,14 +2,14 @@
 kind: SecuredCluster
 apiVersion: platform.stackrox.io/v1alpha1
 metadata:
-  name: stackrox-secured-cluster-${SECURED_CLUSTER_NAME}
-  namespace: ${ACS_NAMESPACE}
+  name: stackrox-secured-cluster-hub-cluster
+  namespace: stackrox
   annotations:
     argocd.argoproj.io/sync-wave: "20"
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
-  centralEndpoint: ${CENTRAL_ENDPOINT}
-  clusterName: ${SECURED_CLUSTER_NAME}
+  centralEndpoint: https://central.stackrox.svc:443
+  clusterName: hub-cluster
   monitoring:
     openshift:
       enabled: true
