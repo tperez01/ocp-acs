@@ -51,7 +51,7 @@ This repository uses an ArgoCD application to deploy RHACS from scratch in your 
 
 * Deploy the RHACS operator on the `rhacs-operator` namespace.
 * Deploy an ACS Central instance in the `stackrox` namespace.
-* OCP Job to download the `init-bundle` from Central and create the OCP secrets. This Job uses an SA with RBAC to create secrets in the `stackrox` cluster.
+* OCP Job to download the `init-bundle` from Central and create the OCP secrets. This Job uses an SA with RBAC to create secrets in the `stackrox` namespace.
 * OCP Job to download vulnerabilities from `stackrox.io` and upload them to Central.
 * WIP: Create a ConsoleLink to quickly access the Central instance.
 * WIP: Create a SecuredCluster to monitor the local cluster.
