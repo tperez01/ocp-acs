@@ -34,7 +34,7 @@ fi
 
 # 1) Deploy the ACS operator
 echo -e "\n[1/4]Deploying the ACS operator"
-oc process -f old/00-operator.yaml \
+oc process -f script-installation/00-operator.yaml \
     -p ACS_OPERATOR_NAMESPACE=$ACS_OPERATOR_NAMESPACE | oc apply -f -
 
 echo ""
@@ -44,7 +44,7 @@ while [[ $(oc get pods -l app=rhacs-operator -n $ACS_OPERATOR_NAMESPACE -o 'json
 
 # 2) Deploy the ACS Central
 echo -e "\n[2/4]Deploying the ACS Central"
-oc process -f old/10-acs-central.yaml \
+oc process -f script-installation/10-acs-central.yaml \
     -p ACS_NAMESPACE=$ACS_NAMESPACE | oc apply -f -
 
 echo -n "Waiting for Central pod ready..."
@@ -68,7 +68,7 @@ oc apply -f cluster_init_bundle.yaml -n $ACS_NAMESPACE
 
 # 4) Deploy the ACS Secured Cluster
 echo -e "\n[4/4]Deploying the ACS Secured Cluster"
-oc process -f old/20-securedcluster.yaml \
+oc process -f script-installation/20-securedcluster.yaml \
     -p ACS_NAMESPACE=$ACS_NAMESPACE \
     -p SECURED_CLUSTER_NAME=$SECURED_CLUSTER_NAME | oc apply -f -
 
